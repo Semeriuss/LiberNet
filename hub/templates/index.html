@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+    Home
+{% endblock title %}
+
+{% block content %} 
+    <div class="jumbotron">
+        {% if user %}
+            <h3 class="text-center"><i>Hi, {{ user[1] }}</i></h3>
+        {% endif %}
+        <h4 class="text-center"><b>Welcome to LiberNet</b></h4>
+        <p class="my-3">We provide you a convenient platform to search and  
+            find your favorite books. With a one fits all model 
+            you can search books by their title, author, isbn, 
+            or even publication date. Does this get better? 
+            Simplicity and relevant details matter to LiberNet
+            and so create your account if you haven't and enjoy!
+        </p>        
+        <a href="{{ url_for('search') }}" class="btn btn-outline-info btn-lg">Search Books</a>
+        <a href="{{ url_for('explore') }}" class="btn btn-info btn-lg">Explore</a>
+        
+    </div>
+
+    
+
+
+{% endblock content %}

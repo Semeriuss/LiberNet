@@ -20,9 +20,11 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 psycopg2-binary==2.8.6
 pycparser==2.20
+requests
 six==1.15.0
 SQLAlchemy==1.4.5
 toml==0.10.2
 Werkzeug==1.0.1
 wrapt==1.12.1
 WTForms==2.3.3
+

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+    Search
+{% endblock title %}
+
+{% block content %}
+
+    <div class="mx-5 my-2"></div>
+    <form action="/search" method="POST">
+        <div style="width: 50%;" class="input-group rounded mx-auto mb-5">
+            <input autocomplete="off" autofocus type="text" name="search_value" class="form-control rounded" placeholder="Search...ISBN, Title, Author, Year" aria-label="Search"
+            aria-describedby="search-addon" />
+            <button class="btn btn-primary ml-2" type="submit">Search</button>
+        </div>
+    </form>
+    <div class="row text-center px-4">
+        <div class="col-lg-4">
+            <p>🌠🌠</p>
+            <p class="font-weight-bold">Beauty in your Eyes</p>
+            <p>Our website revels in its captivating aesthetic design to please your taste wherever it lies.</p>
+        </div>
+
+        <div class="col-lg-4">
+            <p>🧛‍♂️🧛‍♀️</p>
+            <p class="font-weight-bold">Simple for your hands</p>
+            <p>Our searching tool is designed to help you find what you seek with the least amount of effort on your part.</p>
+        </div>
+
+        <div class="col-lg-4">
+            <p>🎭🎭</p>
+            <p class="font-weight-bold">Convenient and Enjoyable</p>
+            <p>Create your account, login, search your favorite books and post your review and ratings</p>
+        </div>
+    </div>
+
+    {% if books | length %}
+    <div id="results" class="row mt-2">
+        <div class="col">
+            <table style="width: 80%;" class="table-striped mx-auto">
+                <thead>
+                    <tr>
+                        <th scope="col">ISBN</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                        <tr>
+                            <td><a href="{{ url_for('about', isbn=book[3]) }}">{{ book[3] }}</a></td>
+                            <td>{{ book[1] }}</td>
+                            <td>{{ book[2] }}</td>
+                            <td>{{ book[4] }}</td>
+                        </tr>
+                    </a>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono&display=swap');
+body{
+    font-family: 'Xanh Mono', monospace;
+}
+
+.form-group{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 10 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.0px );
+    -webkit-backdrop-filter: blur( 5.0px );
+    border-radius: 10px;
+}
+
+.collapse.show{
+    visibility: hidden;
+}
+.circle{
+  width: 18rem;
+  height: 18rem;
+  line-height: 18rem;
+  color: burlywood;
+  border-radius: 50%;
+  font-size: 5rem;
+  color: #fff;
+  text-align: center;
+  background-color: blanchedalmond;
+}
+

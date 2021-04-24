@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %} 
+    Explore
+{% endblock title %}
+
+{% block content %}
+    <div class="container row">
+    {% if book_info %} 
+        {% set ratings = book_info[1] | int %}
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div style=" width: 50%; height: 50%; margin: auto;" class="mx-auto my-2">
+                        <img class="card-img-top img-fluid mx-auto" src="{{ book_info[3] }}" alt="Book Image">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Title: </strong>{{ book[1] }}</h5>
+                        <p class="card-text"><strong>Author: </strong>{{ book[2] }}</p>
+                        <p class="card-text"><strong>Description: </strong>{{ book_info[2] }}</p>
+                        <p class="card-text"><strong>Publication Date: </strong>{{ book[4] }}</p>
+                        <p class="card-text"><strong>Page Count: </strong>{{ book_info[0] }}</p>
+                        <p class="card-text"><strong>Average Rating: </strong>
+                            <ul class="list-inline">
+                                {%for i in range(ratings) %}
+                                    <li class="list-inline-item"><i class="fa fa-star" style="color: gold;"></i></li>
+                                {% endfor %}
+                                {%for i in range(5-ratings) %}
+                                    <li class="list-inline-item"><i class="fa fa-star-o" style="color: gold;"></i></li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mx-auto">
+                {% if hasNotReviewed %}
+                    <div class="mx-auto" style="width: 50%;">
+                        <form action="" method="POST">
+                            {{ form.hidden_tag()}}
+                            <div class="form-group">
+                                {{form.description.label(class="form-control-label")}}
+                                    {% if form.description.errors %}
+                                        {{ form.description(class='form-control form-control is-invalid') }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.description.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {%else%}
+                                        {{ form.description(rows='5', cols='7', class="form-control form-control-md")}}
+                                {%endif%}
+                            </div>
+                            <div class="form-group">
+                                {{form.rating.label(class="form-control-label")}}
+                                {% if form.rating.errors %}
+                                    {{form.rating(class='form-control form-control is-invalid')}}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.rating.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {%else%}
+                                        {{ form.rating(cols='1', class="form-control form-control-sm")}}
+                                {%endif%}    
+                            </div>
+                            <div class="form-group">
+                                    {{ form.submit(class="btn btn-outline-info")}}
+                            </div>
+                        </form>
+                    </div>
+                {% endif %}
+                <h3 class="bg-warning text-center border">Reviews</h3>
+                {% for review in reviews%}
+                    <div class="card m-2">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ review[4] }}</h5>
+                            <p class="card-text">By {{ current_user }}</p>
+                            <p>
+                                <ul class="list-inline">
+                                    {% for i in range(review[3]) %}
+                                        <li class="list-inline-item"><i class="fa fa-star" style="color: gold;"></i></li>
+                                    {% endfor %}
+                                    {% for i in range(5-review[3]) %}
+                                        <li class="list-inline-item"><i class="fa fa-star-o" style="color: gold;"></i></li>
+                                    {% endfor %}
+                                </ul>
+                            </p>
+                        </div>
+                    </div> 
+                {%endfor%}
+            </div>
+        </div>
+    {% else %} 
+        <!-- Some of the products from store -->
+        <div class="carousel slide my-4 mx-auto" id="MySlide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#MySlide" data-slide-to="0" class="active"></li>
+                {% for n in range(1,10) %}
+                <li data-target="#MySlide" data-slide-to="{{ n }}" ></li>
+                {% endfor %}
+            </ol>
+            
+
+            <div class="carousel-inner text-center">
+                <div class="carousel-item active">
+                    <img height="350" width="350" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgy77hV_xxGnCtg2TtAGE3jbXxZDjEu_dIaw&usqp=CAU" alt="">
+                </div>
+                {% for img in myList %}  
+                <div class="carousel-item">
+                    <a class="btn btn-primary my-3 mx-auto" href="{{ url_for('about', isbn=myIsbn[myList.index(img)]) }}">Check it out now!</a>
+                    <div><img height="350" width="350" src="{{ img }}" alt=""></div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <a class="carousel-control-prev" href="#MySlide" role="button" data-slide="prev" >
+                <span class="carousel-control-prev-icon bg-info" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#MySlide" role="button"data-slide="next">
+                <span class="carousel-control-next-icon bg-info" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    {% endif %} 
+{% endblock content %}
