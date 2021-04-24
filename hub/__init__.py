@@ -19,16 +19,21 @@ app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 
-
+# Sign session cookies for protection against cookie data tampering.
 app.config["SECRET_KEY"] = '21b4e5e125d4155fac5997fc3d4c19f721a5df193d3f9c59'
 
 Session(app)
 
+
+
+# For Local Database
+# engine = create_engine("postgresql://postgres:root@localhost/libernet")
+
 # Set up database
 engine = create_engine(os.getenv("DATABASE_URL"))
-# Local Database
-# engine = create_engine("postgresql://postgres:root@localhost/libernet")
 db = scoped_session(sessionmaker(bind=engine))
+# Encryption
 bcrypt = Bcrypt(app)
 
+# Modularized routing functions
 from hub import routes
