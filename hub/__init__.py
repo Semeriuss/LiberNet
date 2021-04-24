@@ -26,11 +26,15 @@ Session(app)
 
 
 
-# For Local Database
-# engine = create_engine("postgresql://postgres:root@localhost/libernet")
+
 
 # Set up database
-engine = create_engine(os.getenv("DATABASE_URL"))
+
+# For remote database
+# engine = create_engine(os.getenv("DATABASE_URL"))
+
+# For Local Database
+engine = create_engine("postgresql://postgres:root@localhost/libernet")
 db = scoped_session(sessionmaker(bind=engine))
 # Encryption
 bcrypt = Bcrypt(app)
