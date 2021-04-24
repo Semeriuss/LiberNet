@@ -22,9 +22,9 @@ $ cd projectone-Semeriuss <br />
 $ pip install -r requirements.txt
 
 # ENV Variables
-$ set FLASK_APP = application.py # python -m application
-$ set DATABASE_URL = Heroku Postgres DB URI or Local Postgres lin
-$ set SECRET_KEY = secret key env variable
+$ set FLASK_APP = application.py # python -m application <br />
+$ set DATABASE_URL = Heroku Postgres DB URI or Local Postgres lin <br />
+$ set SECRET_KEY = secret key env variable <br />
 
 # You need to run import.py and create the database before you run the app
 
@@ -38,37 +38,37 @@ Landing Page
 
 <img width="956" alt="Home" src="https://user-images.githubusercontent.com/50263682/115961084-83df0d80-a51d-11eb-9cb5-f34c41800ddc.PNG">
 
-<br /><br />
+
 
 Registration Page
 
 <img width="572" alt="Registration" src="https://user-images.githubusercontent.com/50263682/115961436-f2709b00-a51e-11eb-9fc1-1633efa26895.PNG">
 
-<br /><br />
+<br />
 
 Login Page
 
 <img width="960" alt="Login" src="https://user-images.githubusercontent.com/50263682/115961110-9d805500-a51d-11eb-8f12-d954064a567c.PNG">
 
-<br /><br />
+<br />
 
 Search Page
 
 <img width="956" alt="Search Page" src="https://user-images.githubusercontent.com/50263682/115961117-a96c1700-a51d-11eb-931c-e683b6f35457.PNG">
 
-<br /><br />
+<br />
 
 Search Results with ISBN Links
 
 <img width="933" alt="Results" src="https://user-images.githubusercontent.com/50263682/115961123-b4bf4280-a51d-11eb-9295-46e0890bc06a.PNG">
 
-<br /><br />
+<br />
 
 Details and Review Page
 
 <img width="923" alt="Review" src="https://user-images.githubusercontent.com/50263682/115961136-c3a5f500-a51d-11eb-8b11-fb081de2330d.PNG">
 
-<br /><br />
+<br />
 
 Explore Page
 
