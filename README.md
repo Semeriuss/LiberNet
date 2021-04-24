@@ -2,9 +2,9 @@ Project 1 Assignment: Web Programming with Python and JavaScript based on CS50
 
 https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/course/
 
-Name of Application: LiberNet
-Purpose: To search books from a local database and get details from an API (Google Books)
-Used: Python (Flask), Bootstrap, HTML, CSS, JS
+Name of Application: LiberNet <br />
+Purpose: To search books from a local database and get details from an API (Google Books) <br />
+Used: Python (Flask), Bootstrap, HTML, CSS, JS <br />
 
 How to use
 - Register
@@ -15,8 +15,8 @@ How to use
 
 To Setup on your own
 # Clone repo
-$ git clone https://github.com/intro-web-programming/projectone-Semeriuss.git
-$ cd projectone-Semeriuss
+$ git clone https://github.com/intro-web-programming/projectone-Semeriuss.git <br />
+$ cd projectone-Semeriuss <br />
 
 # Install all dependencies
 $ pip install -r requirements.txt
@@ -28,47 +28,51 @@ $ set SECRET_KEY = secret key env variable
 
 # You need to run import.py and create the database before you run the app
 
-DB Schema
-users: id (primary), username, email, password
-books: id (primary), isbn, title, author, year
-reviews: id (primary), user_id (foreign key), book_id (foreign key), description, rating
+DB Schema <br /> <br />
+users: id (primary), username, email, password <br />
+books: id (primary), isbn, title, author, year <br />
+reviews: id (primary), user_id (foreign key), book_id (foreign key), description, rating <br />
 
 
 Landing Page
 
 <img width="956" alt="Home" src="https://user-images.githubusercontent.com/50263682/115961084-83df0d80-a51d-11eb-9cb5-f34c41800ddc.PNG">
 
+<br /><br />
 
 Registration Page
 
 <img width="572" alt="Registration" src="https://user-images.githubusercontent.com/50263682/115961436-f2709b00-a51e-11eb-9fc1-1633efa26895.PNG">
 
+<br /><br />
 
 Login Page
 
 <img width="960" alt="Login" src="https://user-images.githubusercontent.com/50263682/115961110-9d805500-a51d-11eb-8f12-d954064a567c.PNG">
 
-
+<br /><br />
 
 Search Page
 
 <img width="956" alt="Search Page" src="https://user-images.githubusercontent.com/50263682/115961117-a96c1700-a51d-11eb-931c-e683b6f35457.PNG">
 
-
+<br /><br />
 
 Search Results with ISBN Links
 
 <img width="933" alt="Results" src="https://user-images.githubusercontent.com/50263682/115961123-b4bf4280-a51d-11eb-9295-46e0890bc06a.PNG">
 
+<br /><br />
 
 Details and Review Page
 
 <img width="923" alt="Review" src="https://user-images.githubusercontent.com/50263682/115961136-c3a5f500-a51d-11eb-8b11-fb081de2330d.PNG">
 
+<br /><br />
 
 Explore Page
 
 <img width="956" alt="Explore" src="https://user-images.githubusercontent.com/50263682/115961151-d3bdd480-a51d-11eb-803c-b42e3c36f6c4.PNG">
 
 
-Feel Free to build up on it. Enjoy!
+
